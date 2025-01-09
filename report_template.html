@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Log Analysis Report</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Network Log Analysis Report</h1>
+    <p>Log File: {{ log_file_path }}</p>
+    <p>Report Generated At: {{ report_time }}</p>
+
+    <h2>Statistics</h2>
+    <p>Total Connections: {{ results.total_connections }}</p>
+    <h3>Connection Status</h3>
+    <ul>
+        {% for status, count in results.status_counts.items() %}
+            <li>{{ status }}: {{ count }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Top Source IPs</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>IP Address</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ip, count in results.top_source_ips.items() %}
+            <tr>
+                <td>{{ ip }}</td>
+                <td>{{ count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Top Destination Domains</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Domain</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for domain, count in results.top_destination_domains.items() %}
+            <tr>
+                <td>{{ domain }}</td>
+                <td>{{ count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Charts</h2>
+    <img src="top_source_ips.png" alt="Top Source IPs Chart">
+    <img src="top_destination_domains.png" alt="Top Destination Domains Chart">
+</body>
+</html>

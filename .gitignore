@@ -1,0 +1,75 @@
+# Python-specific ignores
+*.pyc
+__pycache__/
+*.pyd
+*.egg-info/
+dist/
+build/
+develop-eggs/
+lib/*.egg/
+lib64/*.egg/
+parts/
+sdist/
+var/
+wheels/
+*.so
+*.whl
+.venv/
+venv/
+env/
+ENV/
+*.tar.gz
+*.zip
+
+# OS or Editor/IDE specific ignores
+.DS_Store
+*.swp
+*.swo
+*.log
+*.bak
+*.tmp
+~*
+.idea/
+.vscode/
+*.pyproj
+*.sln
+
+# Documentation specific ignores (if applicable)
+docs/_build/
+
+# Data files (consider if your log files should be tracked - generally not)
+# logs/
+# *.log
+
+# Compiled binary files (if applicable)
+*.exe
+*.dll
+
+# Secrets and credentials (VERY IMPORTANT!)
+*.secrets
+*.key
+credentials.ini
+config.ini
+
+# Temporary files
+*.pytest_cache
+.ropeproject
+
+# Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
+
+# Ignore coverage reports
+.coverage
+htmlcov/
+
+# Ignore any local configuration files not meant for sharing
+local_settings.py
+instance/
+
+# Ignore virtual machine files (if applicable)
+*.vmwarevm/
+*.vagrant/
+*.box
+
+# Ignore any auto-generated HTML reports (if you don't want to track them)
+report.html
